@@ -14,7 +14,7 @@ body {
     
     align-items: center;
     justify-content: center;
-
+    overflow-x: hidden;
     margin: 0;
     background-color: #efedd6;
 }
@@ -38,12 +38,12 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.box.show {
-    transform: translateX(0);
-}
-
 .box:nth-of-type(even) {
     transform: translateX(-200%);
+}
+
+.box.show {
+    transform: translateX(0);
 }
 
 .box h2 {
