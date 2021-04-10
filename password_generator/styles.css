@@ -83,3 +83,20 @@ h2 {
     align-items: center;
     margin: 15px 0;
 }
+
+.notification {
+    position: absolute;
+    top: 20px;
+}
+
+.toast-copy {
+    font-size: 15px;
+    position: relative;
+    top: -38px;
+    left: 39px;
+    font-weight:600;
+    background: #fff;
+    color: #333;
+    padding: 5px;
+    border-radius: 10px 10px 10px 0;
+}

@@ -21,7 +21,17 @@ clipboardEl.addEventListener('click', () => {
     textarea.select();
     document.execCommand('copy');
     textarea.remove();
-    alert('Password copied to the clipboard.');
+    
+    const toastEl = document.createElement('div');
+    toastEl.classList.add("toast-copy");
+    toastEl.textContent = "Copied!";
+
+    document.getElementById("copy-notification").appendChild(toastEl);
+
+    // toastEl.style.visibility:  
+
+    setTimeout(() => { toastEl.remove()}, 3000);
+
 });
 
 generateEl.addEventListener('click', () => {
@@ -45,7 +55,8 @@ function generatePassword(lower, upper, number, symbol, length) {
 
     for(let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
-            const funcName = Object.keys(type)[0];
+            const funcNames = ['lower', 'upper', 'number', 'symbol'];
+            const funcName = funcNames[Math.floor(Math.random() * funcNames.length)];
             generatedPassword += randomFunc[funcName]();
         });
     }
